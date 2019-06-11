@@ -1,0 +1,41 @@
+<head>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+<style>
+html {
+    margin : 15px;
+}
+
+.gohome {
+      color: skyblue;
+  display:inline-block; 
+  text-transform:uppercase;
+  text-decoration:none;
+}
+.gohome:hover {
+        text-decoration:none !important
+}
+.gohome:hover:after {
+        transform: scaleX(1);
+}
+.gohome:after{
+      display:block;
+  content: '';
+  border-bottom: solid 3px #ea2129;  
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+</style>
+
+</head>
+
+<h1>ABOUT THE PAGE</h1>
+<hr>
+<p class="ABOUT">안녕하세여 여러분, 여긴 글자를 세어주는 멋쟁이 사자처럼 의
+워드 카운트 웹페이지입니다.<br>여기에서 글자를 세시면 되여 ㅋ<br><br></p>
+<a href="{%url 'home'%}" class="gohome">Home 으로 돌아가기</a>

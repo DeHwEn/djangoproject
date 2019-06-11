@@ -1,0 +1,53 @@
+<head>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+<style>
+html {
+    font-family: 'Nanum Brush Script';
+    margin : 15px;
+}
+
+.reply {
+  color: skyblue;
+  display:inline-block; 
+  text-transform:uppercase;
+  text-decoration:none;
+}
+.reply:hover{
+    text-decoration:none !important
+}
+.reply:hover:after {
+        transform: scaleX(1);
+}
+.reply:after{
+  display:block;
+  content: '';
+  border-bottom: solid 3px #ea2129;  
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+
+</style>
+</haed>
+
+<h1>당신이 입력한 텍스트는 {{ total }} 단어로 구성되어있어요!</h1><br>
+<a href="{%url 'home'%}" class="reply"> 다시해보기</a>
+<hr><br>
+<h1> 입력 텍스트</h1>
+<!--입력한 전체 텍스트-->
+{{ fulltext }}
+<hr><br>
+
+<h1>단어 카운트: </h1>
+<!-- 단어 - 단어나온 횟수-->
+{% for word, countTotal in dictionary %}
+{{ word }} - {{ countTotal }}
+<br>
+{% endfor %}
+
+
